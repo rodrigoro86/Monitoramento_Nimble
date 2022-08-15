@@ -4,19 +4,40 @@
 </p>   
 
 ![Monitoramento Nimble](doc/imagens/Monitoramento_Nimble.png)
-Devido a necessidade de monitorar os Storages NIMBLE HPE pelo ZABBIX, foi desenvolvido esse projeto para consultar todos os dados das controladoras e dos HD's.
+Devido a necessidade de monitorar os Storages NIMBLE HPE pelo ZABBIX, foi desenvolvido esse projetpo para consultar todos os dados das controladoras e dos HD's dos Storages.
 
-Esse projeto é composto por dois códigos para fazer as consultas do NIMBLE [consulta_controllers.py](cod/Nimble/consulta_controllers.py) e [consulta_disks.py](cod/Nimble/consulta_disks.py) e um código para automatizar a criação dos templates utilizados para monitorar esses dados no zabbix [cria_templates_Nimble.py](cod/Zabbix/cria_templates_Nimble.py). 
+Abaixo um exemplo do Zabbix Server monitorando o Sotarage Nimble.
+
+![Exemplo Zabbix](doc/imagens/ZABBIX_Dados_Nimble.png)
 
 ## Índice
 * [Funcionameto](#funcionameto)
+* [Modo de Usar](#modo)
+* [Referências](#referências)
 
 ## Funcionamento
+Esse projeto é composto por duas partes:
+#### 1° Nimble
+Para fazer a consulta dos status e informações de todos os periféricos do Nimble é utilizada a biblioteca [nimble-python-sdk](https://github.com/hpe-storage/nimble-python-sdk), com ela foi desenvolvido dois códigos, [consulta_controllers.py](cod/Nimble/consulta_controllers.py) faz a consulta dos status das controladoras e [consulta_disks.py](cod/Nimble/consulta_disks.py) que faz a consulta dos status dos discos SSD e HD. 
+
+#### 2° Zabbix
+Para o zabbix conseguir coletar esses dados, foi criado o código [cria_template_Nimble.py](cod/Zabbix/cria_templates_Nimble.py) para automatizar a criação dos templates utilizados para filtrar todos os dados coletados do Nimble.  
 
 
 ## Modo de Usar 
 
 1° - Copie os códigos [consulta_controllers.py](cod/Nimble/consulta_controllers.py) e [consulta_disks.py](cod/Nimble/consulta_disks.py) para a pasta /home do zabbix agente. 
+
+2° - Instale as seguintes bilbiotecas: 
+- nimble-sdk
+- pandas
+- requests
+
+Ou 
+
+`
+pip3 install -r requirements.txt
+`
 
 
 ## Referências 

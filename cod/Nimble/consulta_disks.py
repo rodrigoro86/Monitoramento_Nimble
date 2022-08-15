@@ -74,7 +74,7 @@ class Disks_Nimble():
             list_pd_disks.append(pd_disk)
 
         self.attributes = pd.DataFrame(list_series)
-        #self.attributes = self.attributes[['name','Total LBAs written','Total LBAs flash writes','Total Write Bytes Processed','Temperature C','Power on hours']]
+        self.attributes = self.attributes[['name','Total LBAs written','Total LBAs flash writes','Total Write Bytes Processed','Temperature C','Power on hours']]
         self.pd_disk = pd.concat(list_pd_disks)
 
 def consulta_ip_nimble(nome_ip:str):
