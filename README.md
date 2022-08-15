@@ -12,7 +12,6 @@ Abaixo um exemplo do Zabbix Server monitorando o Sotarage Nimble.
 
 ## Índice
 * [Funcionameto](#funcionameto)
-* [Modo de Usar](#modo)
 * [Referências](#referências)
 
 ## Funcionamento
@@ -22,23 +21,6 @@ Para fazer a consulta dos status e informações de todos os periféricos do Nim
 
 #### 2° Zabbix
 Para o zabbix conseguir coletar esses dados, foi criado o código [cria_template_Nimble.py](cod/Zabbix/cria_templates_Nimble.py) para automatizar a criação dos templates utilizados para filtrar todos os dados coletados do Nimble.  
-
-
-## Modo de Usar 
-
-1° - Copie os códigos [consulta_controllers.py](cod/Nimble/consulta_controllers.py) e [consulta_disks.py](cod/Nimble/consulta_disks.py) para a pasta /home do zabbix agente. 
-
-2° - Instale as seguintes bilbiotecas: 
-- nimble-sdk
-- pandas
-- requests
-
-Ou 
-
-`
-pip3 install -r requirements.txt
-`
-
 
 ## Referências 
 
