@@ -14,6 +14,12 @@ Esse projeto é composto por dois códigos para fazer as consultas do NIMBLE [co
 ## Funcionamento
 
 
-## Mode de Usar 
+## Modo de Usar 
 
 1° - Copie os códigos [consulta_controllers.py](cod/Nimble/consulta_controllers.py) e [consulta_disks.py](cod/Nimble/consulta_disks.py) para a pasta /home do zabbix agente. 
+
+
+## Referências 
+
+- [nimble-python-sdk](https://github.com/hpe-storage/nimble-python-sdk)
+- [API Zabbix](https://www.zabbix.com/documentation/current/en/manual/api)
